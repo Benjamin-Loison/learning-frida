@@ -11,7 +11,7 @@ Being able to intercept, inspect and modify https traffic between an app and a s
 
 If you want to intercept traffic going in and out from a phone you can set up an http/https proxy server, make sure your phone uses it and then monitor all traffic going trough the proxy. By doing this you can easily see all http traffic, but since https traffic is encrypted the proxy is not able to read the data.
 
-To be able to intercept the https traffic the proxy could pretend to be the remote server and present it's own certificate to the phone when it is trying to connect to the remote server. However, since the proxy's certificate is not trusted by the phone the phone will not accept this. If you can get the phone to trust the proxy's certificate, for example by installing it as a trusted certificate, the phone will happily accept it when it is presented by the proxy.
+To be able to intercept the https traffic the proxy could pretend to be the remote server and present its own certificate to the phone when it is trying to connect to the remote server. However, since the proxy's certificate is not trusted by the phone the phone will not accept this. If you can get the phone to trust the proxy's certificate, for example by installing it as a trusted certificate, the phone will happily accept it when it is presented by the proxy.
 
 When this is done the proxy decrypts the incoming request and can do whatever it wants with it, before it sets up a new https connection with the remote server, pretending to be the app and thus acting as a [man in the middle (MITM)][mitm-attack].
 
@@ -21,7 +21,7 @@ When this is done the proxy decrypts the incoming request and can do whatever it
 
 ### Installing the proxy
 
-We'll get started by installing and preparing the proxy server we want to use. My proxy of choice is [Fiddler (classic)][fiddler], it's pretty nice looking and easy to use for both observing and modifying traffic. While it works great most of the time, I haven't been able to get it to work when I install it's certificate as a system certificate on an emulator. With physical phones it works fine, but when using an emulator it breaks down. If you manage to get Fiddler working well with the Android Studio emulator, please let me know.
+We'll get started by installing and preparing the proxy server we want to use. My proxy of choice is [Fiddler (classic)][fiddler], it's pretty nice looking and easy to use for both observing and modifying traffic. While it works great most of the time, I haven't been able to get it to work when I install its certificate as a system certificate on an emulator. With physical phones it works fine, but when using an emulator it breaks down. If you manage to get Fiddler working well with the Android Studio emulator, please let me know.
 
 Due to this I have to settle with [Burp Suite Community Edition][burp] instead. It's a very powerful and popular choice even though I haven't learned to like it yet.
 
